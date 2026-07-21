@@ -1,59 +1,78 @@
 /* =========================
 PRIMEFLOW SERVICES
-TRADES BUSINESS DEMO
+MODERN HOME SERVICES DEMO
 ========================= */
 
-
 const primeflowDemo = `
-
 
 <div class="demo-page primeflow-demo">
 
 
-
-<section class="primeflow-hero">
-
-
-<div>
+<section class="prime-hero">
 
 
-<p class="demo-tag">
-PROFESSIONAL HOME SERVICES
-</p>
+<div class="prime-logo">
 
+<svg width="55" height="55" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="45" fill="#2563eb"/>
+<path d="M30 55 L50 25 L70 55 L50 75 Z" fill="white"/>
+</svg>
 
-
-
-<h1>
-PrimeFlow Services
-</h1>
-
-
-
-
-<p>
-Reliable solutions for your home.
-Done properly, every time.
-</p>
-
-
-
-
-<button>
-Request A Quote
-</button>
-
-
+<span>
+PrimeFlow
+</span>
 
 </div>
 
 
 
+<p class="demo-tag">
+PREMIUM HOME SOLUTIONS
+</p>
+
+
+<h1>
+Modern Service.
+<br>
+Reliable Results.
+</h1>
+
+
+<p>
+Professional plumbing, electrical and property
+solutions built around quality, speed and trust.
+</p>
+
+
+<button>
+Get Your Free Quote
+</button>
+
+
+<div class="hero-card">
+
+<div>
+<h3>500+</h3>
+<p>Projects Completed</p>
+</div>
+
+
+<div>
+<h3>4.9★</h3>
+<p>Customer Rating</p>
+</div>
+
+
+<div>
+<h3>24/7</h3>
+<p>Support</p>
+</div>
+
+
+</div>
+
+
 </section>
-
-
-
-
 
 
 
@@ -63,32 +82,48 @@ Request A Quote
 
 
 <h2>
-What We Do
+Our Services
 </h2>
-
-
 
 
 
 <div class="demo-services">
 
 
+<div class="service-card">
 
-<div>
+<div class="icon">
+⚡
+</div>
 
+<h3>
+Electrical
+</h3>
+
+<p>
+Safe installations, repairs and upgrades
+from qualified specialists.
+</p>
+
+</div>
+
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🔧
+</div>
 
 <h3>
 Repairs
 </h3>
 
-
 <p>
-
-Fast and reliable repairs from
-experienced professionals.
-
+Fast solutions for everyday problems
+with guaranteed workmanship.
 </p>
-
 
 </div>
 
@@ -96,50 +131,22 @@ experienced professionals.
 
 
 
+<div class="service-card">
 
-
-<div>
-
-
-<h3>
-Installation
-</h3>
-
-
-<p>
-
-Professional installation with
-quality guaranteed.
-
-</p>
-
-
+<div class="icon">
+🏠
 </div>
-
-
-
-
-
-
-
-<div>
-
 
 <h3>
 Maintenance
 </h3>
 
-
 <p>
-
-Keep everything working perfectly
-all year round.
-
+Protect your property with regular
+professional servicing.
 </p>
 
-
 </div>
-
 
 
 </div>
@@ -152,64 +159,57 @@ all year round.
 
 
 
+<section class="process">
 
 
+<h2>
+Why Choose PrimeFlow?
+</h2>
 
-<section class="prime-stats">
 
+<div class="process-grid">
 
 
 <div>
 
-<h2>
-10+
-</h2>
-
+<h3>
+01
+</h3>
 
 <p>
-Years Experience
+Quick Response
 </p>
 
-
 </div>
-
-
-
 
 
 <div>
 
-<h2>
-500+
-</h2>
-
+<h3>
+02
+</h3>
 
 <p>
-Jobs Completed
+Expert Team
 </p>
 
-
 </div>
-
-
-
-
 
 
 <div>
 
-<h2>
-5★
-</h2>
-
+<h3>
+03
+</h3>
 
 <p>
-Customer Rating
+Guaranteed Quality
 </p>
-
 
 </div>
 
+
+</div>
 
 
 </section>
@@ -219,78 +219,26 @@ Customer Rating
 
 
 
-
-
-
-<section class="prime-dark">
-
-
-<h2>
-Trusted Professionals
-</h2>
-
+<section class="testimonial">
 
 
 <p>
-
-Clear communication.
-Quality workmanship.
-Reliable results.
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<section class="demo-section">
-
-
-<h2>
-Customer Reviews
-</h2>
-
-
-
-
-
-<div class="review">
-
 ★★★★★
-
-<br><br>
-
-"Excellent service from start to finish."
-
-</div>
+</p>
 
 
+<h2>
+"PrimeFlow transformed our home.
+Professional, fast and reliable."
+</h2>
 
 
-
-<div class="review">
-
-★★★★★
-
-<br><br>
-
-"Professional team and great results."
-
-</div>
-
+<span>
+— Sarah M, London
+</span>
 
 
 </section>
-
-
-
 
 
 
@@ -301,35 +249,24 @@ Customer Reviews
 
 
 <h2>
-Need A Quote?
+Ready To Fix Your Home?
 </h2>
 
 
-
 <p>
-
-Get in touch today.
-
+Book your free consultation today.
 </p>
 
 
-
 <button>
-
 Request Quote
-
 </button>
-
 
 
 </section>
 
 
 
-
-
 </div>
-
-
 
 `;
