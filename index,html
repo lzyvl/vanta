@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+VANTA | Premium Websites For Local Businesses
+</title>
+
+
+<meta name="description" content="VANTA builds premium websites for local UK businesses. Website design, hosting and maintenance handled for one simple subscription.">
+
+
+<link rel="stylesheet" href="style.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+
+<nav class="navbar">
+
+
+<div class="logo">
+VANTA
+</div>
+
+
+
+<div class="nav-links">
+
+<a href="#services">
+Services
+</a>
+
+
+<a href="#demos">
+Demos
+</a>
+
+
+<a href="#pricing">
+Pricing
+</a>
+
+
+<a href="#faq">
+FAQ
+</a>
+
+
+<a href="#contact">
+Contact
+</a>
+
+
+</div>
+
+
+
+<a href="#contact" class="nav-button">
+Free Preview
+</a>
+
+
+
+</nav>
+
+
+
+
+
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<div class="badge">
+WEBSITES BUILT FOR BUSINESS GROWTH
+</div>
+
+
+
+<h1>
+
+Premium Websites
+<br>
+
+<span>
+Without The Agency Price.
+</span>
+
+</h1>
+
+
+
+
+<p>
+
+We design, build and manage professional websites for local businesses.
+Your website, hosting, security and updates are handled by us.
+
+</p>
+
+
+
+<div class="hero-buttons">
+
+
+<a href="#contact" class="button primary">
+Get Your Free Template
+</a>
+
+
+<a href="#demos" class="button secondary">
+Explore Demos
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="hero-object">
+
+<div class="glow"></div>
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- TRUST -->
+
+
+<section class="trust">
+
+
+<div>
+
+<h3>
+£500
+</h3>
+
+<p>
+Starting Website Build
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+24/7
+</h3>
+
+<p>
+Managed Hosting
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+100%
+</h3>
+
+<p>
+Custom Designs
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- WHY VANTA -->
+
+
+<section>
+
+
+<h2>
+Everything Your Business Needs Online
+</h2>
+
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+
+<h3>
+Custom Design
+</h3>
+
+
+<p>
+
+No templates.
+Every website is designed around your brand, customers and goals.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+We Handle Everything
+</h3>
+
+
+<p>
+
+Hosting, updates, security and improvements are managed so you don't have to.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+Built To Convert
+</h3>
+
+
+<p>
+
+Designed to turn visitors into enquiries, bookings and customers.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SERVICES -->
+
+
+<section id="services">
+
+
+<h2>
+Our Services
+</h2>
+
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+<h3>
+Website Development
+</h3>
+
+
+<p>
+Fast, modern and mobile-friendly websites built specifically for your business.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<h3>
+Hosting & Maintenance
+</h3>
+
+
+<p>
+We keep your website running smoothly with updates, security and support.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<h3>
+Growth Improvements
+</h3>
+
+
+<p>
+Continued improvements to help your website perform better over time.
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- DEMOS -->
+
+
+<section id="demos">
+
+
+<h2>
+See What Your Business Could Look Like
+</h2>
+
+
+
+<p class="section-text">
+
+Explore interactive examples built for different industries.
+
+</p>
+
+
+
+
+
+<div class="demo-grid">
+
+
+
+
+
+<div class="demo-card" data-demo="harrison">
+
+
+<div class="browser">
+
+
+<div class="browser-top"></div>
+
+
+<div class="preview">
+
+Harrison & Co.
+
+<br>
+
+Premium Barbershop
+
+</div>
+
+
+</div>
+
+
+
+<h3>
+Harrison & Co.
+</h3>
+
+
+<p>
+Luxury Barbershop Website
+</p>
+
+
+<button>
+View Demo →
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="demo-card" data-demo="amelia">
+
+
+<div class="browser">
+
+
+<div class="browser-top"></div>
+
+
+<div class="preview">
+
+Amelia Rose Studio
+
+<br>
+
+Beauty & Aesthetics
+
+</div>
+
+
+</div>
+
+
+
+<h3>
+Amelia Rose Studio
+</h3>
+
+
+<p>
+Beauty Business Website
+</p>
+
+
+<button>
+View Demo →
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="demo-card" data-demo="primeflow">
+
+
+<div class="browser">
+
+
+<div class="browser-top"></div>
+
+
+<div class="preview">
+
+PrimeFlow Services
+
+<br>
+
+Home Services
+
+</div>
+
+
+</div>
+
+
+
+<h3>
+PrimeFlow Services
+</h3>
+
+
+<p>
+Trades Business Website
+</p>
+
+
+<button>
+View Demo →
+</button>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PROCESS -->
+
+
+<section>
+
+
+<h2>
+How It Works
+</h2>
+
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+<h3>
+01. Free Preview
+</h3>
+
+<p>
+We create an example showing what your business website could look like.
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+02. We Build It
+</h3>
+
+<p>
+Once approved, we create your custom professional website.
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+03. We Manage Everything
+</h3>
+
+<p>
+Your hosting, updates and maintenance are handled monthly.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PRICING -->
+
+
+<section id="pricing">
+
+
+<h2>
+Simple Pricing
+</h2>
+
+
+
+<p class="section-text">
+
+One affordable build fee. Everything else managed by us.
+
+</p>
+
+
+
+
+
+<div class="pricing-grid">
+
+
+
+
+
+<div class="price-card">
+
+
+<h3>
+Starter
+</h3>
+
+
+<h1>
+£500
+</h1>
+
+
+<p>
++ £49/month
+</p>
+
+
+<ul>
+
+<li>
+Custom Website
+</li>
+
+<li>
+Hosting Included
+</li>
+
+<li>
+Security Updates
+</li>
+
+<li>
+Basic Support
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="price-card featured">
+
+
+<h3>
+Growth
+</h3>
+
+
+<h1>
+£500
+</h1>
+
+
+<p>
++ £99/month
+</p>
+
+
+<ul>
+
+<li>
+Everything Starter
+</li>
+
+<li>
+Lead Generation Forms
+</li>
+
+<li>
+Analytics Tracking
+</li>
+
+<li>
+Monthly Improvements
+</li>
+
+<li>
+Priority Support
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="price-card">
+
+
+<h3>
+Premium
+</h3>
+
+
+<h1>
+£500
+</h1>
+
+
+<p>
++ £199/month
+</p>
+
+
+<ul>
+
+<li>
+Everything Growth
+</li>
+
+<li>
+SEO Improvements
+</li>
+
+<li>
+Landing Pages
+</li>
+
+<li>
+Unlimited Updates
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FREE TEMPLATE -->
+
+
+<section class="template">
+
+
+<h2>
+Get Your Free Website Preview
+</h2>
+
+
+<p>
+
+Not ready to commit?
+We'll create a free example showing how your business could look online.
+
+</p>
+
+
+
+<a href="#contact" class="button primary">
+
+Request My Preview
+
+</a>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FAQ -->
+
+
+<section id="faq">
+
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+
+
+<div class="faq">
+
+
+
+<div>
+
+<h3>
+Do I own the website?
+</h3>
+
+<p>
+We manage the website, hosting and maintenance so everything stays working perfectly.
+</p>
+
+</div>
+
+
+
+
+<div>
+
+<h3>
+Why a monthly subscription?
+</h3>
+
+<p>
+Instead of paying thousands upfront, you get continuous support and improvements.
+</p>
+
+</div>
+
+
+
+
+
+<div>
+
+<h3>
+Can I cancel?
+</h3>
+
+<p>
+Contact us and we can discuss the best option for your business.
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- CONTACT -->
+
+
+<section id="contact">
+
+
+<h2>
+Start Your Free Website Preview
+</h2>
+
+
+
+<form action="https://formspree.io/f/YOUR_ID" method="POST">
+
+
+<input
+name="name"
+placeholder="Your Name"
+required
+>
+
+
+<input
+name="business"
+placeholder="Business Name"
+required
+>
+
+
+<input
+name="email"
+type="email"
+placeholder="Email Address"
+required
+>
+
+
+<textarea
+name="message"
+placeholder="Tell us about your business">
+</textarea>
+
+
+
+<button class="button primary">
+
+Send Request
+
+</button>
+
+
+
+</form>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer>
+
+VANTA © 2026
+
+</footer>
+
+
+
+
+
+
+<script src="demos/harrison.js"></script>
+
+<script src="demos/amelia.js"></script>
+
+<script src="demos/primeflow.js"></script>
+
+<script src="script.js"></script>
+
+
+
+</body>
+
+</html>
