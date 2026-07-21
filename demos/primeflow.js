@@ -8,303 +8,292 @@ const primeflowDemo = `
 <style>
 
 .primeflow-demo{
-    --blue:#2563eb;
-    --cyan:#38bdf8;
-    --dark:#050816;
-    --card:#0f172a;
-    font-family:Inter,Arial,sans-serif;
-    background:
-    radial-gradient(circle at top right,#2563eb40,transparent 35%),
-    linear-gradient(180deg,#050816,#020617);
-    color:white;
-    min-height:100%;
-    overflow:hidden;
+--blue:#2563eb;
+--cyan:#38bdf8;
+--dark:#050816;
+--card:#111827;
+font-family:Inter,Arial,sans-serif;
+background:
+radial-gradient(circle at top right,#2563eb55,transparent 35%),
+linear-gradient(180deg,#050816,#020617);
+color:white;
+min-height:100%;
+padding-bottom:60px;
 }
 
 
 .primeflow-demo *{
-    box-sizing:border-box;
+box-sizing:border-box;
 }
 
 
+.pf-nav{
 
-.prime-nav{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:35px 50px;
-
-}
-
-
-
-.prime-logo{
-
-    display:flex;
-    align-items:center;
-    gap:14px;
-    font-size:28px;
-    font-weight:800;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:35px 45px;
+position:sticky;
+top:0;
+background:#050816cc;
+backdrop-filter:blur(20px);
+z-index:5;
 
 }
 
 
+.pf-logo{
 
-.prime-logo svg{
-
-    filter:drop-shadow(0 0 20px #38bdf8);
+display:flex;
+align-items:center;
+gap:12px;
+font-size:28px;
+font-weight:800;
 
 }
 
 
+.pf-logo svg{
 
-
-.prime-btn{
-
-    background:linear-gradient(90deg,var(--blue),var(--cyan));
-    color:white;
-    border:none;
-    padding:14px 30px;
-    border-radius:40px;
-    font-weight:700;
-    box-shadow:0 15px 40px #2563eb55;
-    cursor:pointer;
+filter:drop-shadow(0 0 20px #38bdf8);
 
 }
 
 
 
-.prime-hero{
+.pf-nav-links{
 
-    padding:50px;
+display:flex;
+gap:25px;
+
+}
+
+
+.pf-nav-links a{
+
+color:#94a3b8;
+cursor:pointer;
 
 }
 
 
 
-.prime-tag{
+.pf-btn{
 
-    color:var(--cyan);
-    font-size:13px;
-    letter-spacing:3px;
-    font-weight:700;
-
-}
-
-
-
-.prime-hero h1{
-
-    font-size:70px;
-    line-height:1;
-    max-width:700px;
-    margin:25px 0;
+background:linear-gradient(90deg,#2563eb,#38bdf8);
+border:0;
+color:white;
+padding:15px 35px;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 15px 40px #2563eb55;
 
 }
 
 
 
-.prime-hero h1 span{
+.pf-hero{
 
-    background:linear-gradient(90deg,#38bdf8,#2563eb);
-    -webkit-background-clip:text;
-    color:transparent;
+padding:70px 45px;
+
+}
+
+
+.pf-tag{
+
+color:#38bdf8;
+letter-spacing:3px;
+font-size:13px;
+font-weight:700;
+
+}
+
+
+.pf-hero h1{
+
+font-size:75px;
+line-height:1;
+max-width:750px;
+
+}
+
+
+.pf-hero span{
+
+background:linear-gradient(90deg,#38bdf8,#2563eb);
+-webkit-background-clip:text;
+color:transparent;
+
+}
+
+
+.pf-text{
+
+max-width:550px;
+color:#94a3b8;
+font-size:20px;
+line-height:1.6;
 
 }
 
 
 
-.prime-description{
+.pf-stats{
 
-    color:#94a3b8;
-    font-size:20px;
-    max-width:550px;
-    line-height:1.6;
-
-}
-
-
-
-.prime-stats{
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    padding:50px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:45px;
 
 }
 
 
+.pf-stat{
 
-.prime-stat{
-
-    background:#ffffff08;
-    border:1px solid #ffffff15;
-    backdrop-filter:blur(20px);
-    padding:30px;
-    border-radius:25px;
+background:#ffffff08;
+border:1px solid #ffffff15;
+padding:30px;
+border-radius:25px;
 
 }
 
 
+.pf-stat h2{
 
-.prime-stat h2{
-
-    color:white;
-    font-size:42px;
-    margin-bottom:10px;
+font-size:40px;
 
 }
 
 
+.pf-stat p{
 
-.prime-stat p{
-
-    color:#94a3b8;
-
-}
-
-
-
-
-.prime-section{
-
-    padding:50px;
-
-}
-
-
-
-.prime-section h2{
-
-    font-size:42px;
-    margin-bottom:35px;
-
-}
-
-
-
-.prime-services{
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-
-}
-
-
-
-.prime-card{
-
-    background:
-    linear-gradient(
-    145deg,
-    #111827,
-    #020617
-    );
-
-    border:1px solid #ffffff15;
-    padding:35px;
-    border-radius:25px;
-    transition:.3s;
-
-}
-
-
-
-.prime-card:hover{
-
-    transform:translateY(-10px);
-    border-color:#38bdf8;
-
-}
-
-
-
-.prime-icon{
-
-    font-size:40px;
-    margin-bottom:20px;
-
-}
-
-
-
-.prime-card h3{
-
-    font-size:24px;
-    margin-bottom:15px;
-
-}
-
-
-
-.prime-card p{
-
-    color:#94a3b8;
-    line-height:1.5;
+color:#94a3b8;
 
 }
 
 
 
 
-.quote-box{
+.pf-section{
 
-    margin:50px;
-    padding:45px;
-    border-radius:30px;
-    background:
-    linear-gradient(
-    135deg,
-    #2563eb,
-    #0ea5e9
-    );
+padding:45px;
+
+}
+
+
+.pf-section h2{
+
+font-size:40px;
 
 }
 
 
 
-.quote-box h2{
+.pf-grid{
 
-    font-size:38px;
-
-}
-
-
-
-.quote-box button{
-
-    margin-top:25px;
-    background:white;
-    color:#2563eb;
-    border:0;
-    padding:15px 35px;
-    border-radius:40px;
-    font-weight:700;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 
 }
 
 
 
+.pf-card{
 
-.review-grid{
+background:#111827;
+border:1px solid #ffffff12;
+padding:35px;
+border-radius:25px;
+transition:.3s;
 
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+}
+
+
+.pf-card:hover{
+
+transform:translateY(-10px);
+border-color:#38bdf8;
 
 }
 
 
 
-.review-card{
+.pf-icon{
 
-    background:#111827;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid #ffffff10;
+font-size:40px;
+
+}
+
+
+
+.pf-projects{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+
+}
+
+
+.pf-project{
+
+height:220px;
+border-radius:25px;
+background:
+linear-gradient(135deg,#2563eb,#020617);
+display:flex;
+align-items:end;
+padding:25px;
+font-size:22px;
+font-weight:700;
+
+}
+
+
+
+
+.pf-portal{
+
+background:
+linear-gradient(135deg,#111827,#020617);
+border:1px solid #ffffff15;
+border-radius:30px;
+padding:40px;
+
+}
+
+
+
+.portal-status{
+
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#ffffff08;
+border-radius:20px;
+margin-top:20px;
+
+}
+
+
+
+
+.pf-reviews{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+
+}
+
+
+.review{
+
+background:#111827;
+padding:30px;
+border-radius:25px;
 
 }
 
@@ -312,27 +301,73 @@ const primeflowDemo = `
 
 .stars{
 
-    color:#38bdf8;
-    font-size:22px;
+color:#38bdf8;
 
 }
 
 
 
-@media(max-width:800px){
 
-.prime-hero h1{
+.pf-modal{
 
-font-size:45px;
+position:fixed;
+inset:0;
+background:#00000099;
+display:none;
+align-items:center;
+justify-content:center;
+z-index:20;
 
 }
 
 
-.prime-services,
-.prime-stats,
-.review-grid{
+
+.pf-modal.active{
+
+display:flex;
+
+}
+
+
+
+.pf-form{
+
+background:#111827;
+padding:40px;
+border-radius:30px;
+width:400px;
+
+}
+
+
+.pf-form input{
+
+width:100%;
+padding:15px;
+margin:10px 0;
+background:#020617;
+border:1px solid #ffffff20;
+color:white;
+border-radius:10px;
+
+}
+
+
+
+@media(max-width:900px){
+
+.pf-grid,
+.pf-stats,
+.pf-projects,
+.pf-reviews{
 
 grid-template-columns:1fr;
+
+}
+
+.pf-hero h1{
+
+font-size:45px;
 
 }
 
@@ -347,28 +382,43 @@ grid-template-columns:1fr;
 
 
 
-<nav class="prime-nav">
+<nav class="pf-nav">
 
 
-<div class="prime-logo">
-
+<div class="pf-logo">
 
 <svg width="45" height="45" viewBox="0 0 100 100">
 
 <rect width="100" height="100" rx="25" fill="#2563eb"/>
 
-<path d="M25 65L50 25L75 65L50 55Z" fill="white"/>
+<path d="M25 65L50 20L75 65L50 50Z" fill="white"/>
 
 </svg>
-
 
 PrimeFlow
 
 </div>
 
 
+<div class="pf-nav-links">
 
-<button class="prime-btn">
+<a>
+Services
+</a>
+
+<a>
+Projects
+</a>
+
+<a>
+Reviews
+</a>
+
+</div>
+
+
+
+<button class="pf-btn" onclick="openPrimeQuote()">
 Get Quote
 </button>
 
@@ -379,26 +429,29 @@ Get Quote
 
 
 
-<section class="prime-hero">
+<section class="pf-hero">
 
-
-<p class="prime-tag">
-PREMIUM HOME SERVICES
+<p class="pf-tag">
+PREMIUM PROPERTY SERVICES
 </p>
 
 
 <h1>
-Reliable work.
+
+Your home.
 <br>
-<span>Exceptional results.</span>
+
+<span>Handled properly.</span>
+
 </h1>
 
 
-<p class="prime-description">
 
-PrimeFlow delivers professional electrical,
-maintenance and property solutions with
-speed, precision and guaranteed quality.
+<p class="pf-text">
+
+PrimeFlow provides professional electrical,
+repair and maintenance solutions for modern homes
+and businesses.
 
 </p>
 
@@ -406,7 +459,7 @@ speed, precision and guaranteed quality.
 <br>
 
 
-<button class="prime-btn">
+<button class="pf-btn" onclick="openPrimeQuote()">
 Book Service
 </button>
 
@@ -419,49 +472,31 @@ Book Service
 
 
 
-<section class="prime-stats">
+<section class="pf-stats">
 
 
-<div class="prime-stat">
-
-<h2>
-500+
-</h2>
-
-<p>
-Completed Projects
-</p>
-
+<div class="pf-stat">
+<h2>500+</h2>
+<p>Projects Completed</p>
 </div>
 
 
-
-<div class="prime-stat">
-
-<h2>
-4.9★
-</h2>
-
-<p>
-Customer Rating
-</p>
-
+<div class="pf-stat">
+<h2>10+</h2>
+<p>Years Experience</p>
 </div>
 
 
-
-<div class="prime-stat">
-
-<h2>
-24/7
-</h2>
-
-<p>
-Support Available
-</p>
-
+<div class="pf-stat">
+<h2>4.9★</h2>
+<p>Customer Rating</p>
 </div>
 
+
+<div class="pf-stat">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
 
 
 </section>
@@ -471,21 +506,19 @@ Support Available
 
 
 
-
-<section class="prime-section">
-
+<section class="pf-section">
 
 <h2>
-Our Expertise
+Our Services
 </h2>
 
 
-<div class="prime-services">
+<div class="pf-grid">
 
 
-<div class="prime-card">
+<div class="pf-card">
 
-<div class="prime-icon">
+<div class="pf-icon">
 ⚡
 </div>
 
@@ -494,16 +527,16 @@ Electrical
 </h3>
 
 <p>
-Safe installations, repairs and upgrades from certified professionals.
+Installations, upgrades and emergency repairs.
 </p>
 
 </div>
 
 
 
-<div class="prime-card">
+<div class="pf-card">
 
-<div class="prime-icon">
+<div class="pf-icon">
 🔧
 </div>
 
@@ -512,16 +545,16 @@ Repairs
 </h3>
 
 <p>
-Fast solutions designed to keep your property running perfectly.
+Fast fixes completed by professionals.
 </p>
 
 </div>
 
 
 
-<div class="prime-card">
+<div class="pf-card">
 
-<div class="prime-icon">
+<div class="pf-icon">
 🏠
 </div>
 
@@ -530,11 +563,10 @@ Maintenance
 </h3>
 
 <p>
-Protect your investment with reliable ongoing servicing.
+Keep your property performing perfectly.
 </p>
 
 </div>
-
 
 
 </div>
@@ -548,33 +580,96 @@ Protect your investment with reliable ongoing servicing.
 
 
 
-<div class="quote-box">
-
+<section class="pf-section">
 
 <h2>
-Need a professional today?
+Recent Projects
 </h2>
 
 
-<p>
-Get a free consultation and quote within minutes.
-</p>
+<div class="pf-projects">
 
 
-<button>
-Request Quote
-</button>
+<div class="pf-project">
+Luxury Home Upgrade
+</div>
+
+
+<div class="pf-project">
+Office Renovation
+</div>
+
+
+<div class="pf-project">
+Smart Home Setup
+</div>
 
 
 </div>
 
 
+</section>
 
 
 
 
 
-<section class="prime-section">
+
+
+<section class="pf-section">
+
+
+<h2>
+Client Portal
+</h2>
+
+
+<div class="pf-portal">
+
+
+<h3>
+Current Booking
+</h3>
+
+
+<div class="portal-status">
+
+<span>
+Technician Assigned
+</span>
+
+<strong>
+✓ Confirmed
+</strong>
+
+</div>
+
+
+<div class="portal-status">
+
+<span>
+Arrival Time
+</span>
+
+<strong>
+14:30
+</strong>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="pf-section">
 
 
 <h2>
@@ -582,32 +677,28 @@ Customer Reviews
 </h2>
 
 
-<div class="review-grid">
+<div class="pf-reviews">
 
 
-<div class="review-card">
-
-<div class="stars">
-★★★★★
-</div>
-
-<br>
-
-"Fantastic service from start to finish. Highly recommended."
-
-</div>
-
-
-
-<div class="review-card">
+<div class="review">
 
 <div class="stars">
 ★★★★★
 </div>
 
-<br>
+"Professional from start to finish."
 
-"Professional team, excellent communication and quality work."
+</div>
+
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+"Best service company we've used."
 
 </div>
 
@@ -616,6 +707,54 @@ Customer Reviews
 
 
 </section>
+
+
+
+
+
+
+<div class="pf-modal" id="primeQuote">
+
+
+<div class="pf-form">
+
+<h2>
+Request Quote
+</h2>
+
+
+<input placeholder="Name">
+
+
+<input placeholder="Phone">
+
+
+<input placeholder="Service Needed">
+
+
+<button class="pf-btn">
+Submit
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+function openPrimeQuote(){
+
+document.querySelector("#primeQuote")
+.classList.add("active");
+
+}
+
+</script>
 
 
 
