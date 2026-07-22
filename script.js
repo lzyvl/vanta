@@ -1,5 +1,6 @@
 /* =========================
 VANTA FINAL SCRIPT
+WINDOW SYSTEM + INTERACTIONS
 ========================= */
 
 
@@ -7,9 +8,10 @@ VANTA FINAL SCRIPT
 NAVBAR BLUR
 ========================= */
 
-
 const navbar = document.querySelector(".navbar");
 
+
+if(navbar){
 
 window.addEventListener("scroll",()=>{
 
@@ -26,18 +28,14 @@ navbar.style.borderBottom =
 "1px solid rgba(255,255,255,.08)";
 
 
-}
-
-else{
+}else{
 
 
 navbar.style.background =
 "transparent";
 
-
 navbar.style.backdropFilter =
 "none";
-
 
 navbar.style.borderBottom =
 "none";
@@ -49,8 +47,7 @@ navbar.style.borderBottom =
 });
 
 
-
-
+}
 
 
 
@@ -77,7 +74,6 @@ link.getAttribute("href")
 );
 
 
-
 if(section){
 
 e.preventDefault();
@@ -97,9 +93,6 @@ behavior:"smooth"
 
 
 });
-
-
-
 
 
 
@@ -136,6 +129,7 @@ el.style.transition=
 
 
 
+
 function reveal(){
 
 
@@ -146,12 +140,10 @@ const top =
 el.getBoundingClientRect().top;
 
 
-if(top <
-window.innerHeight - 100){
+if(top < window.innerHeight - 100){
 
 
 el.style.opacity="1";
-
 
 el.style.transform=
 "translateY(0)";
@@ -164,7 +156,6 @@ el.style.transform=
 
 
 }
-
 
 
 window.addEventListener(
@@ -181,33 +172,25 @@ reveal();
 
 
 
-
-
 /* =========================
 MOUSE GLOW
 ========================= */
 
 
 const glow =
-document.createElement(
-"div"
-);
+document.createElement("div");
 
 
 glow.className =
 "mouse-glow";
 
 
-document.body.appendChild(
-glow
-);
+document.body.appendChild(glow);
 
 
 
 const glowCSS =
-document.createElement(
-"style"
-);
+document.createElement("style");
 
 
 glowCSS.innerHTML=`
@@ -222,38 +205,28 @@ height:350px;
 
 border-radius:50%;
 
-
 background:
-
 radial-gradient(
 circle,
 rgba(43,127,255,.15),
 transparent 70%
 );
 
-
 pointer-events:none;
-
 
 transform:
 translate(-50%,-50%);
 
-
 filter:blur(30px);
-
 
 z-index:-1;
 
 }
 
-
 `;
 
 
-
-document.head.appendChild(
-glowCSS
-);
+document.head.appendChild(glowCSS);
 
 
 
@@ -279,21 +252,16 @@ e.clientY+"px";
 
 
 
-
-
 /* =========================
-DEMO OPENING SYSTEM
+DEMO OPEN SYSTEM
 ========================= */
 
 
-const demos =
 document.querySelectorAll(
 ".demo-card"
-);
+)
 
-
-
-demos.forEach(card=>{
+.forEach(card=>{
 
 
 card.addEventListener(
@@ -322,15 +290,11 @@ function openDemo(type){
 
 
 const overlay =
-document.createElement(
-"div"
-);
-
+document.createElement("div");
 
 
 overlay.className =
 "demo-overlay";
-
 
 
 
@@ -340,34 +304,33 @@ overlay.innerHTML = `
 <div class="demo-window">
 
 
-<button class="close-demo">
-
-×
+<div class="window-controls">
 
 
+<button class="window-btn close">
 </button>
+
+
+<button class="window-btn minimize">
+</button>
+
+
+<button class="window-btn fullscreen">
+</button>
+
+
+</div>
 
 
 
 <div class="demo-browser">
 
 
-<div class="demo-bar">
-
-● ● ●
-
-</div>
-
-
-
 <div class="demo-content">
-
 
 ${loadDemo(type)}
 
-
 </div>
-
 
 
 </div>
@@ -377,8 +340,6 @@ ${loadDemo(type)}
 
 
 `;
-
-
 
 
 
@@ -393,15 +354,11 @@ document.body.style.overflow =
 
 
 
-
-
 setTimeout(()=>{
-
 
 overlay.classList.add(
 "active"
 );
-
 
 },50);
 
@@ -410,14 +367,25 @@ overlay.classList.add(
 
 
 
-const close =
+const windowBox =
 overlay.querySelector(
-".close-demo"
+".demo-window"
 );
 
 
 
-close.onclick=()=>{
+
+
+/* =========================
+CLOSE
+========================= */
+
+
+overlay.querySelector(
+".close"
+)
+
+.onclick=()=>{
 
 
 overlay.classList.remove(
@@ -432,11 +400,10 @@ setTimeout(()=>{
 overlay.remove();
 
 
-document.body.style.overflow =
-"";
+document.body.style.overflow="";
 
 
-},500);
+},400);
 
 
 
@@ -445,11 +412,115 @@ document.body.style.overflow =
 
 
 
+
+
+
+/* =========================
+MINIMIZE
+========================= */
+
+
+overlay.querySelector(
+".minimize"
+)
+
+.onclick=()=>{
+
+
+windowBox.classList.toggle(
+"minimized"
+);
+
+
+};
+
+
+
+
+
+
+
+
+/* =========================
+FULLSCREEN
+========================= */
+
+
+overlay.querySelector(
+".fullscreen"
+)
+
+.onclick=()=>{
+
+
+windowBox.classList.toggle(
+"fullscreen"
+);
+
+
+};
+
+
+
+
+
+
+
+/* =========================
+DEMO BUTTON HANDLERS
+========================= */
+
+
+setTimeout(()=>{
+
+
+document.querySelectorAll(
+".demo-action"
+)
+
+.forEach(button=>{
+
+
+button.onclick=()=>{
+
+
+const target =
+button.dataset.target;
+
+
+const section =
+document.querySelector(
+target
+);
+
+
+if(section){
+
+section.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
 }
 
 
+};
 
 
+});
+
+
+
+},100);
+
+
+
+
+
+
+}
 
 
 
@@ -461,7 +532,6 @@ LOAD DEMOS
 
 
 function loadDemo(type){
-
 
 
 if(type==="harrison"){
@@ -487,6 +557,7 @@ return primeflowDemo;
 }
 
 
+return "";
 
 }
 
@@ -503,14 +574,11 @@ CARD TILT
 ========================= */
 
 
-const cards =
 document.querySelectorAll(
 ".demo-card,.card"
-);
+)
 
-
-
-cards.forEach(card=>{
+.forEach(card=>{
 
 
 card.addEventListener(
@@ -520,7 +588,6 @@ card.addEventListener(
 
 const box =
 card.getBoundingClientRect();
-
 
 
 const x =
@@ -542,6 +609,7 @@ const rotateY =
 
 
 card.style.transform =
+
 `
 
 perspective(800px)
@@ -567,8 +635,7 @@ card.addEventListener(
 ()=>{
 
 
-card.style.transform =
-"";
+card.style.transform="";
 
 
 });
@@ -589,14 +656,11 @@ BUTTON MAGNET EFFECT
 ========================= */
 
 
-const buttons =
 document.querySelectorAll(
 ".button"
-);
+)
 
-
-
-buttons.forEach(button=>{
+.forEach(button=>{
 
 
 button.addEventListener(
@@ -629,9 +693,7 @@ ${y*.15}px
 `;
 
 
-
 });
-
 
 
 
@@ -641,8 +703,7 @@ button.addEventListener(
 ()=>{
 
 
-button.style.transform =
-"";
+button.style.transform="";
 
 
 });
