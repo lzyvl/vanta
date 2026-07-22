@@ -1,231 +1,569 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Harrison & Co | Private Advisory</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+const harrisonDemo = `
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+.harrison-demo{
 
-body{
-font-family:Inter,sans-serif;
-background:#080b12;
-color:white;
-}
+font-family:Inter,Arial,sans-serif;
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:30px 8%;
-}
-
-.logo{
-font-family:"Playfair Display";
-font-size:28px;
-letter-spacing:1px;
-}
-
-.logo span{
-color:#d8b36a;
-}
-
-nav button{
-background:#d8b36a;
-border:none;
-padding:12px 25px;
-border-radius:30px;
-font-weight:600;
-}
-
-.hero{
-padding:100px 8%;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
-
-.hero h1{
-font-family:"Playfair Display";
-font-size:70px;
-line-height:1.05;
-}
-
-.hero h1 span{
-color:#d8b36a;
-}
-
-.hero p{
-margin:30px 0;
-color:#aaa;
-font-size:18px;
-max-width:500px;
-}
-
-.cta{
-background:#d8b36a;
-color:#111;
-padding:16px 35px;
-border-radius:40px;
-display:inline-block;
-}
-
-.building{
-height:450px;
-border-radius:30px;
 background:
+radial-gradient(circle at top right,#c9a22735,transparent 35%),
+linear-gradient(180deg,#050505,#111);
+
+color:white;
+
+min-height:100%;
+
+padding-bottom:80px;
+
+}
+
+
+.harrison-demo *{
+
+box-sizing:border-box;
+
+}
+
+
+
+.hr-nav{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:35px 50px;
+
+}
+
+
+
+
+.hr-brand{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+font-family:Georgia,serif;
+
+font-size:30px;
+
+font-weight:700;
+
+}
+
+
+
+.hr-brand svg{
+
+filter:
+drop-shadow(0 0 20px #c9a227);
+
+}
+
+
+
+
+
+.hr-btn{
+
+background:
+linear-gradient(90deg,#c9a227,#f5d76e);
+
+color:#111;
+
+border:none;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+font-weight:800;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.hr-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+
+.hr-links{
+
+display:flex;
+
+gap:25px;
+
+color:#bdbdbd;
+
+}
+
+
+
+
+.hr-hero{
+
+padding:70px 50px;
+
+}
+
+
+
+.hr-tag{
+
+color:#c9a227;
+
+letter-spacing:5px;
+
+font-size:12px;
+
+font-weight:700;
+
+}
+
+
+
+.hr-hero h1{
+
+font-family:Georgia,serif;
+
+font-size:80px;
+
+line-height:1;
+
+max-width:850px;
+
+margin:30px 0;
+
+}
+
+
+
+
+.hr-hero span{
+
+color:#c9a227;
+
+}
+
+
+
+
+.hr-text{
+
+font-size:20px;
+
+color:#aaa;
+
+max-width:600px;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+.hr-stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+padding:50px;
+
+}
+
+
+
+.hr-stat{
+
+background:#ffffff08;
+
+border:1px solid #ffffff15;
+
+padding:30px;
+
+border-radius:25px;
+
+}
+
+
+
+.hr-stat h2{
+
+font-size:42px;
+
+color:#c9a227;
+
+margin:0;
+
+}
+
+
+
+
+
+.hr-section{
+
+padding:50px;
+
+}
+
+
+
+.hr-section h2{
+
+font-family:Georgia,serif;
+
+font-size:45px;
+
+}
+
+
+
+
+
+.hr-properties{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+}
+
+
+
+
+.hr-property{
+
+height:300px;
+
+border-radius:30px;
+
+background:
+
 linear-gradient(
 135deg,
-rgba(216,179,106,.3),
-transparent
-),
-url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c")
-center/cover;
-}
+#c9a227,
+#111
+);
 
+padding:30px;
 
-.stats{
 display:flex;
-justify-content:center;
-gap:80px;
-padding:60px 8%;
-background:#0d111c;
-}
 
-.stat h2{
-font-size:40px;
-color:#d8b36a;
-}
+flex-direction:column;
 
-.services{
-padding:80px 8%;
-}
+justify-content:end;
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-margin-top:40px;
-}
-
-.card{
-background:#111724;
-padding:35px;
-border-radius:20px;
-border:1px solid #222;
-}
-
-.card h3{
-margin-bottom:15px;
-color:#d8b36a;
-}
-
-.review{
-margin:80px 8%;
-padding:40px;
-background:#111724;
-border-radius:25px;
 font-size:22px;
-font-family:"Playfair Display";
+
+font-weight:700;
+
 }
+
+
+
+
+.hr-card{
+
+background:#111;
+
+border:1px solid #ffffff15;
+
+padding:35px;
+
+border-radius:30px;
+
+}
+
+
+
+
+
+.hr-portal{
+
+background:#111;
+
+border-radius:30px;
+
+padding:40px;
+
+border:1px solid #ffffff15;
+
+}
+
+
+
+.hr-row{
+
+display:flex;
+
+justify-content:space-between;
+
+background:#ffffff08;
+
+padding:20px;
+
+border-radius:15px;
+
+margin-top:15px;
+
+}
+
+
+
+
+.hr-review{
+
+background:#111;
+
+padding:30px;
+
+border-radius:25px;
+
+margin-top:20px;
+
+}
+
+
+
+.hr-stars{
+
+color:#c9a227;
+
+}
+
+
+
+
+
+/* MODAL */
+
+
+.hr-modal{
+
+position:fixed;
+
+inset:0;
+
+background:#000c;
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:100;
+
+}
+
+
+
+.hr-modal.active{
+
+display:flex;
+
+}
+
+
+
+.hr-box{
+
+background:#111;
+
+padding:40px;
+
+border-radius:30px;
+
+width:420px;
+
+border:1px solid #c9a22755;
+
+}
+
+
+
+.hr-box input{
+
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+background:#050505;
+
+border:1px solid #333;
+
+color:white;
+
+border-radius:12px;
+
+}
+
+
+
+
 
 @media(max-width:900px){
 
-.hero{
+
+.hr-stats,
+.hr-properties{
+
 grid-template-columns:1fr;
+
 }
 
-.hero h1{
+
+.hr-hero h1{
+
 font-size:45px;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
 
 }
+
+
+}
+
 
 </style>
 
-</head>
 
 
-<body>
 
 
-<nav>
+<div class="harrison-demo">
 
-<div class="logo">
-HARRISON <span>& CO</span>
+
+
+
+
+<nav class="hr-nav">
+
+
+<div class="hr-brand">
+
+
+<svg width="45" height="45" viewBox="0 0 100 100">
+
+
+<circle cx="50" cy="50" r="45" fill="#c9a227"/>
+
+
+<path d="M25 65L50 25L75 65H60V75H40V65Z" fill="#111"/>
+
+
+</svg>
+
+
+Harrison & Co
+
+
 </div>
 
-<button>
-Book Consultation
+
+
+
+<div class="hr-links">
+
+<span>Properties</span>
+
+<span>Investments</span>
+
+<span>About</span>
+
+</div>
+
+
+
+
+<button class="hr-btn hr-open">
+
+Book Valuation
+
 </button>
+
+
 
 </nav>
 
 
 
-<section class="hero">
 
-<div>
+
+
+
+
+
+<section class="hr-hero">
+
+
+<p class="hr-tag">
+
+LUXURY PROPERTY GROUP
+
+</p>
+
+
+
 
 <h1>
-Private Advisory
-for <span>Modern Wealth</span>
+
+Exceptional homes.
+
+<br>
+
+<span>
+Smart investments.
+</span>
+
 </h1>
 
 
-<p>
-Harrison & Co provides strategic property,
-investment and lifestyle advisory services
-for high-net-worth individuals.
+
+
+
+<p class="hr-text">
+
+Harrison & Co specialises in luxury
+properties, premium developments and
+strategic property investments.
+
 </p>
 
 
-<a class="cta">
-Explore Services
-</a>
 
-</div>
+<br>
 
 
-<div class="building"></div>
+<button class="hr-btn hr-open">
 
+Request Valuation
 
-</section>
+</button>
 
-
-
-<section class="stats">
-
-<div class="stat">
-<h2>18+</h2>
-<p>Years Experience</p>
-</div>
-
-
-<div class="stat">
-<h2>240</h2>
-<p>Clients Served</p>
-</div>
-
-
-<div class="stat">
-<h2>£85M</h2>
-<p>Assets Managed</p>
-</div>
 
 
 </section>
@@ -233,54 +571,352 @@ Explore Services
 
 
 
-<section class="services">
+
+
+
+
+
+<section class="hr-stats">
+
+
+<div class="hr-stat">
 
 <h2>
-Our Expertise
+£250M+
+</h2>
+
+<p>
+Property Sold
+</p>
+
+</div>
+
+
+
+
+<div class="hr-stat">
+
+<h2>
+15+
+</h2>
+
+<p>
+Years Experience
+</p>
+
+</div>
+
+
+
+
+<div class="hr-stat">
+
+<h2>
+98%
+</h2>
+
+<p>
+Client Satisfaction
+</p>
+
+</div>
+
+
+
+
+<div class="hr-stat">
+
+<h2>
+24/7
+</h2>
+
+<p>
+Private Support
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="hr-section">
+
+
+<h2>
+
+Featured Properties
+
 </h2>
 
 
-<div class="cards">
+
+<div class="hr-properties">
 
 
-<div class="card">
-<h3>Property Strategy</h3>
-<p>
-Acquisition and portfolio growth strategies.
-</p>
+<div class="hr-property">
+
+Chelsea Residence
+
+</div>
+
+
+
+<div class="hr-property">
+
+Modern Kensington Villa
+
 </div>
 
 
-<div class="card">
-<h3>Private Advisory</h3>
-<p>
-Personalised financial planning solutions.
-</p>
+
+<div class="hr-property">
+
+Luxury City Apartment
+
+</div>
+
+
+
 </div>
 
 
-<div class="card">
-<h3>Global Network</h3>
-<p>
-Exclusive opportunities worldwide.
-</p>
-</div>
-
-
-</div>
 
 </section>
 
 
 
-<div class="review">
 
-"Professional, discreet and incredibly effective.
-Harrison & Co transformed the way we manage our assets."
+
+
+
+
+
+<section class="hr-section">
+
+
+<h2>
+
+Private Client Portal
+
+</h2>
+
+
+
+<div class="hr-portal">
+
+
+<h3>
+Investment Overview
+</h3>
+
+
+
+<div class="hr-row">
+
+<span>
+Portfolio Value
+</span>
+
+<strong>
+£2.4M
+</strong>
 
 </div>
 
 
 
-</body>
-</html>
+
+<div class="hr-row">
+
+<span>
+Current Status
+</span>
+
+<strong>
+Active
+</strong>
+
+</div>
+
+
+
+
+<div class="hr-row">
+
+<span>
+Next Viewing
+</span>
+
+<strong>
+Tomorrow 14:00
+</strong>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="hr-section">
+
+
+<h2>
+Client Reviews
+</h2>
+
+
+
+<div class="hr-review">
+
+
+<div class="hr-stars">
+
+★★★★★
+
+</div>
+
+
+"Harrison & Co delivered an outstanding buying experience."
+
+</div>
+
+
+
+<div class="hr-review">
+
+
+<div class="hr-stars">
+
+★★★★★
+
+</div>
+
+
+"Professional, discreet and extremely knowledgeable."
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<div class="hr-modal">
+
+
+<div class="hr-box">
+
+
+<h2>
+Property Valuation
+</h2>
+
+
+
+<input placeholder="Your Name">
+
+
+<input placeholder="Property Location">
+
+
+<input placeholder="Email">
+
+
+
+<button class="hr-btn">
+
+Submit Request
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+(function(){
+
+
+const modal =
+document.querySelector(".hr-modal");
+
+
+
+document.querySelectorAll(".hr-open")
+.forEach(btn=>{
+
+
+btn.onclick=()=>{
+
+modal.classList.add("active");
+
+};
+
+
+});
+
+
+
+modal.onclick=(e)=>{
+
+
+if(e.target===modal){
+
+modal.classList.remove("active");
+
+}
+
+};
+
+
+})();
+
+</script>
+
+
+
+
+
+</div>
+
+`;
