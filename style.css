@@ -1475,3 +1475,310 @@ letter-spacing:-3px;
 
 
 }
+
+/* =========================
+VANTA DEMO WINDOW SYSTEM
+========================= */
+
+
+.demo-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,.75);
+
+backdrop-filter:
+blur(15px);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.5s;
+
+z-index:9999;
+
+}
+
+
+
+.demo-overlay.active{
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+
+
+
+
+/* =========================
+WINDOW
+========================= */
+
+
+.demo-window{
+
+position:relative;
+
+width:90vw;
+
+height:90vh;
+
+background:#050505;
+
+border-radius:28px;
+
+overflow:hidden;
+
+box-shadow:
+
+0 50px 120px rgba(0,0,0,.8);
+
+transform:
+
+scale(.92)
+translateY(30px);
+
+transition:.5s;
+
+
+}
+
+
+
+.demo-overlay.active .demo-window{
+
+transform:
+
+scale(1)
+translateY(0);
+
+}
+
+
+
+
+
+/* =========================
+APPLE CONTROLS
+========================= */
+
+
+.window-controls{
+
+position:absolute;
+
+top:18px;
+
+left:20px;
+
+display:flex;
+
+gap:10px;
+
+z-index:10000;
+
+}
+
+
+
+.window-btn{
+
+width:15px;
+
+height:15px;
+
+border-radius:50%;
+
+border:none;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+
+
+.window-btn:hover{
+
+transform:scale(1.15);
+
+}
+
+
+
+.window-btn.close{
+
+background:#ff5f57;
+
+box-shadow:
+0 0 10px rgba(255,95,87,.5);
+
+}
+
+
+
+.window-btn.minimize{
+
+background:#febc2e;
+
+box-shadow:
+0 0 10px rgba(254,188,46,.5);
+
+}
+
+
+
+.window-btn.fullscreen{
+
+background:#28c840;
+
+box-shadow:
+0 0 10px rgba(40,200,64,.5);
+
+}
+
+
+
+
+
+/* =========================
+BROWSER AREA
+========================= */
+
+
+.demo-browser{
+
+height:100%;
+
+overflow:hidden;
+
+padding-top:55px;
+
+}
+
+
+
+.demo-content{
+
+height:100%;
+
+overflow-y:auto;
+
+}
+
+
+
+
+
+/* =========================
+FULLSCREEN
+========================= */
+
+
+.demo-window.fullscreen{
+
+width:100vw;
+
+height:100vh;
+
+border-radius:0;
+
+}
+
+
+
+
+
+/* =========================
+MINIMISE
+========================= */
+
+
+.demo-window.minimized{
+
+transform:
+
+scale(.1)
+
+translateY(600px);
+
+opacity:0;
+
+}
+
+
+
+
+
+/* =========================
+SMOOTH SCROLL
+========================= */
+
+
+.demo-content{
+
+scroll-behavior:smooth;
+
+}
+
+
+
+
+/* =========================
+DEMO BUTTONS
+========================= */
+
+
+.demo-content button{
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.demo-content button:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:900px){
+
+
+.demo-window{
+
+width:100vw;
+
+height:100vh;
+
+border-radius:0;
+
+}
+
+
+}
