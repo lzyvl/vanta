@@ -4,7 +4,7 @@
 
 :root{
   --bg:#ffffff;
-  --bg-alt:#f5f5f7;
+  --bg-alt:#f7f7f8;
   --bg-dark:#000000;
   --card-dark:#1d1d1f;
 
@@ -13,18 +13,18 @@
   --text-on-dark:#f5f5f7;
   --muted-on-dark:#a1a1a6;
 
-  --blue:#0071e3;
-  --blue-hover:#0077ed;
-  --link:#0066cc;
+  --blue:#1d1d1f;
+  --blue-hover:#3a3a3d;
+  --link:#1d1d1f;
   --link-on-dark:#2997ff;
 
-  --line:rgba(0,0,0,.1);
+  --line:rgba(0,0,0,.08);
   --line-dark:rgba(255,255,255,.14);
 
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Inter",Helvetica,Arial,sans-serif;
 
-  --radius:24px;
-  --ease:cubic-bezier(.28,.11,.32,1);
+  --radius:20px;
+  --ease:cubic-bezier(.22,.61,.36,1);
 }
 
 *{
@@ -61,7 +61,7 @@ ul{
 }
 
 :focus-visible{
-  outline:2px solid var(--blue);
+  outline:2px solid #1d1d1f;
   outline-offset:3px;
   border-radius:8px;
 }
@@ -101,9 +101,9 @@ ul{
 }
 
 .logo{
-  font-size:17px;
-  font-weight:600;
-  letter-spacing:.14em;
+  font-size:16px;
+  font-weight:500;
+  letter-spacing:.18em;
 }
 
 .nav-links{
@@ -164,10 +164,10 @@ section.dark{
 }
 
 main h2{
-  font-size:clamp(34px,5.2vw,56px);
-  line-height:1.07;
-  font-weight:600;
-  letter-spacing:-.03em;
+  font-size:clamp(30px,4.2vw,44px);
+  line-height:1.12;
+  font-weight:500;
+  letter-spacing:-.028em;
   text-align:center;
   text-wrap:balance;
   margin-bottom:48px;
@@ -177,8 +177,8 @@ main h2{
   max-width:640px;
   margin:-28px auto 48px;
   text-align:center;
-  font-size:clamp(19px,2.2vw,24px);
-  line-height:1.3;
+  font-size:clamp(17px,1.9vw,20px);
+  line-height:1.4;
   letter-spacing:-.018em;
   color:var(--muted);
 }
@@ -250,31 +250,33 @@ section.dark .section-text{
 }
 
 .eyebrow{
-  font-size:clamp(17px,2vw,21px);
-  font-weight:600;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.01em;
+  text-transform:none;
   letter-spacing:-.01em;
   color:var(--muted);
   margin-bottom:12px;
 }
 
 .hero h1{
-  font-size:clamp(40px,7vw,80px);
+  font-size:clamp(38px,6vw,68px);
   text-wrap:balance;
-  line-height:1.04;
-  font-weight:600;
-  letter-spacing:-.045em;
+  line-height:1.07;
+  font-weight:500;
+  letter-spacing:-.038em;
 }
 
 .hero h1 span{
   display:block;
-  color:#86868b;
+  color:#a1a1a6;
 }
 
 .lead{
   max-width:620px;
   margin:24px auto 0;
-  font-size:clamp(19px,2.4vw,24px);
-  line-height:1.3;
+  font-size:clamp(18px,2vw,21px);
+  line-height:1.4;
   letter-spacing:-.018em;
   color:var(--muted);
 }
@@ -304,10 +306,10 @@ section.dark .section-text{
 }
 
 .stat h3{
-  font-size:clamp(44px,6vw,72px);
+  font-size:clamp(40px,5vw,56px);
   line-height:1.05;
-  font-weight:600;
-  letter-spacing:-.04em;
+  font-weight:500;
+  letter-spacing:-.035em;
 }
 
 .stat p{
@@ -339,9 +341,9 @@ section.dark .card{
 }
 
 .card h3{
-  font-size:24px;
-  line-height:1.17;
-  font-weight:600;
+  font-size:21px;
+  line-height:1.2;
+  font-weight:500;
   letter-spacing:-.022em;
   margin-bottom:12px;
 }
@@ -381,10 +383,10 @@ section.dark .card p{
 
 .step-num{
   display:block;
-  font-size:14px;
-  font-weight:600;
-  letter-spacing:.04em;
-  color:var(--blue);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.08em;
+  color:#a1a1a6;
   margin-bottom:56px;
 }
 
@@ -409,8 +411,8 @@ section.dark .card p{
 }
 
 .demo-card:hover{
-  transform:scale(1.025);
-  box-shadow:0 24px 60px rgba(0,0,0,.12);
+  transform:translateY(-4px);
+  box-shadow:0 18px 44px rgba(0,0,0,.07);
 }
 
 .browser{
@@ -448,12 +450,12 @@ section.dark .card p{
   padding:20px;
   text-align:center;
   color:#fff;
-  background:linear-gradient(160deg,#2a2a2d,#0b0b0c);
+  background:linear-gradient(160deg,#4a4a4d,#2a2a2d);
 }
 
 .preview span{
-  font-size:22px;
-  font-weight:600;
+  font-size:20px;
+  font-weight:500;
   letter-spacing:-.025em;
 }
 
@@ -464,20 +466,20 @@ section.dark .card p{
 }
 
 [data-demo="harrison"] .preview{
-  background:radial-gradient(circle at 80% 0%,rgba(201,162,39,.35),transparent 55%),linear-gradient(160deg,#1c1c1e,#050505);
+  background:linear-gradient(160deg,#3a3a3c,#1c1c1e);
 }
 
 [data-demo="amelia"] .preview{
-  background:radial-gradient(circle at 20% 0%,rgba(255,255,255,.55),transparent 55%),linear-gradient(160deg,#e8a6b6,#c46f86);
+  background:linear-gradient(160deg,#dcc3c7,#c3a2a8);
 }
 
 [data-demo="primeflow"] .preview{
-  background:radial-gradient(circle at 80% 0%,rgba(255,255,255,.3),transparent 55%),linear-gradient(160deg,#2f7bf5,#0a3d99);
+  background:linear-gradient(160deg,#7b8fb0,#52668a);
 }
 
 .demo-card h3{
-  font-size:21px;
-  font-weight:600;
+  font-size:19px;
+  font-weight:500;
   letter-spacing:-.022em;
   line-height:1.2;
 }
@@ -524,16 +526,16 @@ section.dark .card p{
 }
 
 .price-card h3{
-  font-size:24px;
-  font-weight:600;
+  font-size:19px;
+  font-weight:500;
   letter-spacing:-.022em;
 }
 
 .price{
   margin-top:20px;
-  font-size:56px;
+  font-size:48px;
   line-height:1;
-  font-weight:600;
+  font-weight:500;
   letter-spacing:-.04em;
 }
 
@@ -563,22 +565,14 @@ section.dark .card p{
   top:13px;
   width:11px;
   height:6px;
-  border-left:2px solid var(--blue);
-  border-bottom:2px solid var(--blue);
+  border-left:1.5px solid #8a8a8e;
+  border-bottom:1.5px solid #8a8a8e;
   transform:rotate(-45deg);
 }
 
 .price-card.featured{
-  background:var(--bg-dark);
-  color:var(--text-on-dark);
-}
-
-.price-card.featured .per{
-  color:var(--muted-on-dark);
-}
-
-.price-card.featured ul{
-  border-top-color:var(--line-dark);
+  background:#fff;
+  box-shadow:0 24px 60px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.06);
 }
 
 .tag{
@@ -586,9 +580,9 @@ section.dark .card p{
   top:20px;
   right:20px;
   font-size:12px;
-  font-weight:600;
+  font-weight:500;
   letter-spacing:0;
-  padding:4px 10px;
+  padding:4px 11px;
   border-radius:980px;
   background:var(--blue);
   color:#fff;
@@ -615,9 +609,9 @@ section.dark .card p{
   justify-content:space-between;
   gap:20px;
   padding:24px 0;
-  font-size:21px;
-  font-weight:600;
-  letter-spacing:-.022em;
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:-.02em;
 }
 
 .faq summary::-webkit-details-marker{ display:none; }
@@ -675,7 +669,7 @@ main input:focus,
 main textarea:focus{
   outline:none;
   border-color:var(--blue);
-  box-shadow:0 0 0 4px rgba(0,113,227,.2);
+  box-shadow:0 0 0 4px rgba(0,0,0,.08);
 }
 
 main textarea{
@@ -710,8 +704,8 @@ footer{
 
 .js .reveal{
   opacity:0;
-  transform:translateY(28px);
-  transition:opacity .9s var(--ease),transform .9s var(--ease);
+  transform:translateY(14px);
+  transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);
 }
 
 .js .reveal.in{
@@ -721,7 +715,7 @@ footer{
 
 /* stop reveal transform from fighting hover transform */
 .js .demo-card.reveal.in{
-  transition:opacity .9s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);
+  transition:opacity 1.1s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -889,16 +883,3 @@ footer{
 }
 
 
-/* contact form on dark */
-
-#contact input,
-#contact textarea{
-  background:var(--card-dark);
-  border-color:rgba(255,255,255,.14);
-  color:var(--text-on-dark);
-}
-
-#contact input::placeholder,
-#contact textarea::placeholder{
-  color:#86868b;
-}
