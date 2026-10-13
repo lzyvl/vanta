@@ -1,6 +1,6 @@
 /* =========================
 VANTA SCRIPT
-Nav state, smooth scroll, scroll reveal, cursor background effect
+Nav (incl. mobile menu), smooth scroll, scroll reveal
 ========================= */
 
 
@@ -9,6 +9,13 @@ NAVBAR
 ========================= */
 
 const navbar = document.querySelector(".navbar");
+const navToggle = document.querySelector(".nav-toggle");
+
+function setMenu(open) {
+  if (!navbar || !navToggle) return;
+  navbar.classList.toggle("open", open);
+  navToggle.setAttribute("aria-expanded", String(open));
+}
 
 if (navbar) {
   const updateNav = () => {
@@ -17,6 +24,25 @@ if (navbar) {
 
   window.addEventListener("scroll", updateNav, { passive: true });
   updateNav();
+}
+
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    setMenu(!navbar.classList.contains("open"));
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") setMenu(false);
+  });
+
+  // close the menu when tapping outside it, or when the screen grows past mobile
+  document.addEventListener("click", e => {
+    if (!navbar.contains(e.target)) setMenu(false);
+  });
+
+  window.matchMedia("(min-width: 721px)").addEventListener("change", e => {
+    if (e.matches) setMenu(false);
+  });
 }
 
 
@@ -28,6 +54,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", e => {
     const href = link.getAttribute("href");
     const target = href.length > 1 ? document.querySelector(href) : document.body;
+
+    setMenu(false);
 
     if (target) {
       e.preventDefault();
@@ -59,57 +87,4 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach(el => observer.observe(el));
 } else {
   revealItems.forEach(el => el.classList.add("in"));
-}
-
-
-/* =========================
-CURSOR BACKGROUND EFFECT
-Soft spotlight and dot grid that follow the pointer.
-Only on devices with a real mouse, and not for reduced-motion users.
-========================= */
-
-const hasMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (hasMouse && !reduceMotion) {
-  const fx = document.createElement("div");
-  fx.className = "cursor-fx";
-  fx.setAttribute("aria-hidden", "true");
-  document.body.prepend(fx);
-
-  let targetX = window.innerWidth / 2;
-  let targetY = window.innerHeight / 3;
-  let x = targetX;
-  let y = targetY;
-  let frame = 0;
-
-  const tick = () => {
-    x += (targetX - x) * 0.12;
-    y += (targetY - y) * 0.12;
-
-    fx.style.setProperty("--x", x + "px");
-    fx.style.setProperty("--y", y + "px");
-
-    if (Math.abs(targetX - x) > 0.3 || Math.abs(targetY - y) > 0.3) {
-      frame = requestAnimationFrame(tick);
-    } else {
-      frame = 0;
-    }
-  };
-
-  window.addEventListener(
-    "pointermove",
-    e => {
-      targetX = e.clientX;
-      targetY = e.clientY;
-      fx.classList.add("on");
-
-      if (!frame) frame = requestAnimationFrame(tick);
-    },
-    { passive: true }
-  );
-
-  document.documentElement.addEventListener("mouseleave", () => {
-    fx.classList.remove("on");
-  });
 }
