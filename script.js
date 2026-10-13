@@ -203,3 +203,79 @@ Four tabs, each plays an animated scene; auto-advances with a sweep transition
     show(0, false);
   }
 })();
+
+
+/* =========================
+EXAMPLE SITES CAROUSEL
+========================= */
+
+(function () {
+  const root = document.querySelector("[data-carousel]");
+  if (!root) return;
+  const stage = root.querySelector(".car-stage");
+  const items = Array.from(root.querySelectorAll(".car-item"));
+  const capB = root.querySelector(".car-cap b");
+  const capS = root.querySelector(".car-cap span");
+  const n = items.length;
+  let cur = 0;
+  let pos = 0; // fractional position while dragging
+
+  function layout(p) {
+    items.forEach((el, i) => {
+      let o = i - p;
+      o = ((o + n / 2) % n + n) % n - n / 2; // wrap to shortest distance
+      el.style.setProperty("--o", o.toFixed(3));
+      el.style.setProperty("--ao", Math.min(Math.abs(o), 2.2).toFixed(3));
+      el.style.visibility = Math.abs(o) > 2.2 ? "hidden" : "visible";
+    });
+  }
+
+  function go(i) {
+    cur = ((i % n) + n) % n;
+    pos = pos + (((cur - pos + n / 2) % n + n) % n - n / 2); // keep continuous
+    layout(pos);
+    capB.textContent = items[cur].dataset.name.replace(/&amp;/g, "&");
+    capS.textContent = "· " + items[cur].dataset.type.replace(/&amp;/g, "&");
+  }
+
+  root.querySelectorAll(".car-btn").forEach(b =>
+    b.addEventListener("click", () => go(cur + Number(b.dataset.dir)))
+  );
+
+  root.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") go(cur + 1);
+    if (e.key === "ArrowLeft") go(cur - 1);
+  });
+  stage.tabIndex = 0;
+
+  // drag / swipe
+  let startX = 0, startPos = 0, dragging = false, moved = false;
+  const unit = () => stage.clientWidth * 0.34;
+
+  stage.addEventListener("pointerdown", e => {
+    dragging = true; moved = false; startX = e.clientX; startPos = pos;
+    stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener("pointermove", e => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 4) { moved = true; stage.classList.add("drag"); }
+    if (moved) { pos = startPos - dx / unit(); layout(pos); }
+  });
+  const end = () => {
+    if (!dragging) return;
+    dragging = false;
+    stage.classList.remove("drag");
+    go(Math.round(pos));
+  };
+  stage.addEventListener("pointerup", end);
+  stage.addEventListener("pointercancel", end);
+
+  // click a side card to bring it forward
+  items.forEach((el, i) => {
+    el.style.pointerEvents = "auto";
+    el.addEventListener("click", () => { if (!moved && i !== cur) go(i); });
+  });
+
+  go(0);
+})();
