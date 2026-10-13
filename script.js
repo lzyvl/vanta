@@ -1,6 +1,6 @@
 /* =========================
 VANTA SCRIPT
-Nav state, smooth scroll, scroll reveal, demo window system
+Nav state, smooth scroll, scroll reveal, cursor background effect
 ========================= */
 
 
@@ -63,103 +63,53 @@ if ("IntersectionObserver" in window) {
 
 
 /* =========================
-DEMO OPEN SYSTEM
+CURSOR BACKGROUND EFFECT
+Soft spotlight and dot grid that follow the pointer.
+Only on devices with a real mouse, and not for reduced-motion users.
 ========================= */
 
-document.querySelectorAll(".demo-card").forEach(card => {
-  card.addEventListener("click", () => openDemo(card.dataset.demo));
+const hasMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  card.addEventListener("keydown", e => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      openDemo(card.dataset.demo);
+if (hasMouse && !reduceMotion) {
+  const fx = document.createElement("div");
+  fx.className = "cursor-fx";
+  fx.setAttribute("aria-hidden", "true");
+  document.body.prepend(fx);
+
+  let targetX = window.innerWidth / 2;
+  let targetY = window.innerHeight / 3;
+  let x = targetX;
+  let y = targetY;
+  let frame = 0;
+
+  const tick = () => {
+    x += (targetX - x) * 0.12;
+    y += (targetY - y) * 0.12;
+
+    fx.style.setProperty("--x", x + "px");
+    fx.style.setProperty("--y", y + "px");
+
+    if (Math.abs(targetX - x) > 0.3 || Math.abs(targetY - y) > 0.3) {
+      frame = requestAnimationFrame(tick);
+    } else {
+      frame = 0;
     }
+  };
+
+  window.addEventListener(
+    "pointermove",
+    e => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      fx.classList.add("on");
+
+      if (!frame) frame = requestAnimationFrame(tick);
+    },
+    { passive: true }
+  );
+
+  document.documentElement.addEventListener("mouseleave", () => {
+    fx.classList.remove("on");
   });
-});
-
-
-function openDemo(type) {
-  const overlay = document.createElement("div");
-  overlay.className = "demo-overlay";
-
-  overlay.innerHTML = `
-    <div class="demo-window">
-      <div class="window-controls">
-        <button class="window-btn close" aria-label="Close demo"></button>
-        <button class="window-btn minimize" aria-label="Minimise demo"></button>
-        <button class="window-btn fullscreen" aria-label="Toggle fullscreen"></button>
-      </div>
-
-      <div class="demo-browser">
-        <div class="demo-content">
-          ${loadDemo(type)}
-        </div>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(overlay);
-  document.body.style.overflow = "hidden";
-
-  setTimeout(() => overlay.classList.add("active"), 50);
-
-  const windowBox = overlay.querySelector(".demo-window");
-
-
-  /* CLOSE */
-  function closeDemo() {
-    overlay.classList.remove("active");
-    document.removeEventListener("keydown", onKey);
-
-    setTimeout(() => {
-      overlay.remove();
-      document.body.style.overflow = "";
-    }, 400);
-  }
-
-  function onKey(e) {
-    if (e.key === "Escape") closeDemo();
-  }
-
-  document.addEventListener("keydown", onKey);
-
-  overlay.querySelector(".close").onclick = closeDemo;
-
-
-  /* MINIMIZE */
-  overlay.querySelector(".minimize").onclick = () => {
-    windowBox.classList.toggle("minimized");
-  };
-
-
-  /* FULLSCREEN */
-  overlay.querySelector(".fullscreen").onclick = () => {
-    windowBox.classList.toggle("fullscreen");
-  };
-
-
-  /* DEMO BUTTON HANDLERS */
-  setTimeout(() => {
-    overlay.querySelectorAll(".demo-action").forEach(button => {
-      button.onclick = () => {
-        const section = overlay.querySelector(button.dataset.target);
-
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      };
-    });
-  }, 100);
-}
-
-
-/* =========================
-LOAD DEMOS
-========================= */
-
-function loadDemo(type) {
-  if (type === "harrison") return harrisonDemo;
-  if (type === "amelia") return ameliaDemo;
-  if (type === "primeflow") return primeflowDemo;
-  return "";
 }
